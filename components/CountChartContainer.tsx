@@ -1,6 +1,6 @@
+import prisma from "@/lib/prisma";
 import Image from "next/image";
 import CountChart from "./CountChart";
-import prisma from "@/lib/prisma";
 
 const CountChartContainer = async () => {
   const data = await prisma.student.groupBy({

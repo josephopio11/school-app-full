@@ -1,24 +1,14 @@
 "use client";
 
+import { createClass, updateClass } from "@/lib/actions";
+import { classSchema, ClassSchema } from "@/lib/formValidationSchemas";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import InputField from "../InputField";
-import {
-  classSchema,
-  ClassSchema,
-  subjectSchema,
-  SubjectSchema,
-} from "@/lib/formValidationSchemas";
-import {
-  createClass,
-  createSubject,
-  updateClass,
-  updateSubject,
-} from "@/lib/actions";
-import { useFormState } from "react-dom";
-import { Dispatch, SetStateAction, useEffect } from "react";
-import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { Dispatch, SetStateAction, useEffect } from "react";
+import { useFormState } from "react-dom";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import InputField from "../InputField";
 
 const ClassForm = ({
   type,

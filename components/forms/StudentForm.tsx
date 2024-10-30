@@ -1,26 +1,16 @@
 "use client";
 
+import { createStudent, updateStudent } from "@/lib/actions";
+import { studentSchema, StudentSchema } from "@/lib/formValidationSchemas";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import InputField from "../InputField";
-import Image from "next/image";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import {
-  studentSchema,
-  StudentSchema,
-  teacherSchema,
-  TeacherSchema,
-} from "@/lib/formValidationSchemas";
-import { useFormState } from "react-dom";
-import {
-  createStudent,
-  createTeacher,
-  updateStudent,
-  updateTeacher,
-} from "@/lib/actions";
-import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
 import { CldUploadWidget } from "next-cloudinary";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useFormState } from "react-dom";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import InputField from "../InputField";
 
 const StudentForm = ({
   type,
